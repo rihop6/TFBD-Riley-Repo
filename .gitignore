@@ -1,5 +1,10 @@
+.gitignore
+
 .venv
+.venv/*
+.env
 pyvenv.cfg
 Include
 Lib
 Scripts
+constants.py
