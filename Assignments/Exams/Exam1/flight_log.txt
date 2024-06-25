@@ -1,0 +1,6 @@
+0, DC, West Chester
+Number of passengers: 4
+
+1, New York, Seattle
+Number of passengers: 0
+
