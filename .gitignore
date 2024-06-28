@@ -8,3 +8,5 @@ Include
 Lib
 Scripts
 constants.py
+Data/*
+AdventureWorks2022.bak
