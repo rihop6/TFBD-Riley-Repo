@@ -160,4 +160,26 @@ ORDER BY
 -- Exercise 7
 USE retail_db;
 
+SELECT
+	COUNT(1) [count]
+FROM 
+	order_items oi
+WHERE
+	CAST(order_item_quantity * order_item_product_price AS DECIMAL(18,2)) != CAST(order_item_subtotal AS DECIMAL(18,2));
+
 -- Exercise 8
+SELECT
+	CASE
+		WHEN DATEPART(dw, order_date) IN (1, 7) THEN 'Weekend days'
+		ELSE 'Week days'
+	END AS day_type,
+	COUNT(order_id) AS order_count
+FROM
+	orders
+WHERE
+	format(order_date, 'yyyy-MM') LIKE '2014-01%'
+GROUP BY
+	CASE
+		WHEN DATEPART(dw, order_date) IN (1, 7) THEN 'Weekend days'
+		ELSE 'Week days'
+	END;
