@@ -61,3 +61,10 @@ SELECT
 	DATEADD(month, 1, original_date) [Month Add],
 	DATEADD(year, 1, original_date) [Year Add]
 FROM datetimetable;
+
+-- UTC
+SELECT
+	original_date,
+	CAST(original_date AS DATETIMEOFFSET) [Casted Date],
+	original_date AT TIME ZONE 'Eastern Standard Time' [EST Time]
+FROM datetimetable;
